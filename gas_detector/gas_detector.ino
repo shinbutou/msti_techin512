@@ -12,16 +12,16 @@ byte _2[8] = { // Array of bytes, B stands for binary formatter and the five num
   B11110
 };
 
-  byte _3[8] = {
-    B00000,
-    B00000,
-    B00000,
-    B11110,
-    B00100,
-    B11110,
-    B00010,
-    B11100
-  };
+  // byte _3[8] = {
+  //   B00000,
+  //   B00000,
+  //   B00000,
+  //   B11110,
+  //   B00100,
+  //   B11110,
+  //   B00010,
+  //   B11100
+  // };
 
 const int buzzer = 3;
 
@@ -38,7 +38,7 @@ void loop() {
   int MQ7_value = analogRead(A2);
   int MQ135_value = analogRead(A3);
 
-  if (MQ135_value > 130 || MQ7_value > 300 || MQ3_value > 500) {
+  if (MQ135_value > 150 || MQ7_value > 300 || MQ3_value > 500) {
     beep(1000);
   }
 
@@ -70,6 +70,7 @@ void loop() {
   lcd.write("(ppm)");
 
   delay(1000);
+  lcd.clear();
 }
 
 void beep(int time) {
