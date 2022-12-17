@@ -27,9 +27,8 @@ const int buzzer = 3;
 
 void setup() {
   // Serial.begin(9600); // For data testing
-
   lcd.createChar(0, _2); // Create a custom character
-  lcd.createChar(1, _3);
+  // lcd.createChar(1, _3);
   lcd.begin(16, 2);  // Initializes the LCD screen, specifying the dimensions (width, height) of the display
 }
 
@@ -38,7 +37,7 @@ void loop() {
   int MQ7_value = analogRead(A2);
   int MQ135_value = analogRead(A3);
 
-  if (MQ135_value > 150 || MQ7_value > 300 || MQ3_value > 500) {
+  if (MQ135_value > 200 || MQ7_value > 300 || MQ3_value > 600) {
     beep(1000);
   }
 
